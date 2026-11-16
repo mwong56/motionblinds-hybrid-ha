@@ -1,0 +1,12 @@
+{
+  "domain": "motionblinds_hybrid",
+  "name": "Motionblinds Hybrid",
+  "codeowners": ["@mwong56"],
+  "config_flow": true,
+  "documentation": "https://github.com/mwong56/motionblinds-hybrid-ha",
+  "issue_tracker": "https://github.com/mwong56/motionblinds-hybrid-ha/issues",
+  "integration_type": "hub",
+  "iot_class": "cloud_polling",
+  "requirements": ["bcrypt==5.0.0"],
+  "version": "0.1.1"
+}

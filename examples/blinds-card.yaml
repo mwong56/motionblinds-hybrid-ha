@@ -1,0 +1,71 @@
+# Replace these sample entity IDs with the entities created in your installation.
+type: vertical-stack
+cards:
+  - type: grid
+    title: Blinds
+    columns: 2
+    square: false
+    cards:
+      - type: tile
+        entity: cover.blind_1
+        icon_tap_action:
+          action: more-info
+        features:
+          - type: cover-open-close
+          - type: cover-position
+      - type: tile
+        entity: cover.blind_2
+        icon_tap_action:
+          action: more-info
+        features:
+          - type: cover-open-close
+          - type: cover-position
+      - type: tile
+        entity: cover.blind_3
+        icon_tap_action:
+          action: more-info
+        features:
+          - type: cover-open-close
+          - type: cover-position
+      - type: tile
+        entity: cover.blind_4
+        icon_tap_action:
+          action: more-info
+        features:
+          - type: cover-open-close
+          - type: cover-position
+      - type: tile
+        entity: cover.blind_5
+        icon_tap_action:
+          action: more-info
+        features:
+          - type: cover-open-close
+          - type: cover-position
+      - type: tile
+        entity: cover.blind_6
+        icon_tap_action:
+          action: more-info
+        features:
+          - type: cover-open-close
+          - type: cover-position
+  - type: markdown
+    title: Blind battery estimates
+    content: |
+      {% macro charge(entity) -%}
+        {% set value = states(entity) -%}
+        {{ ('%.0f%%' | format(value | float)) if is_number(value) else '—' }}
+      {%- endmacro -%}
+      {% macro voltage(entity) -%}
+        {% set value = states(entity) -%}
+        {{ ('%.2f V' | format(value | float)) if is_number(value) else '—' }}
+      {%- endmacro %}
+      | Blind | Estimate | Voltage |
+      | :--- | ---: | ---: |
+      | Blind 1 | {{ charge('sensor.blind_1_battery') }} | {{ voltage('sensor.blind_1_battery_voltage') }} |
+      | Blind 2 | {{ charge('sensor.blind_2_battery') }} | {{ voltage('sensor.blind_2_battery_voltage') }} |
+      | Blind 3 | {{ charge('sensor.blind_3_battery') }} | {{ voltage('sensor.blind_3_battery_voltage') }} |
+      | Blind 4 | {{ charge('sensor.blind_4_battery') }} | {{ voltage('sensor.blind_4_battery_voltage') }} |
+      | Blind 5 | {{ charge('sensor.blind_5_battery') }} | {{ voltage('sensor.blind_5_battery_voltage') }} |
+      | Blind 6 | {{ charge('sensor.blind_6_battery') }} | {{ voltage('sensor.blind_6_battery_voltage') }} |
+
+      *Estimated from battery voltage.*

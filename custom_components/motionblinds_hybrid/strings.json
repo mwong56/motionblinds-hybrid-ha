@@ -1,0 +1,38 @@
+{
+  "title": "Motionblinds Hybrid",
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect Motionblinds Bridge",
+        "description": "Cloud account names identify your blinds. Commands use the cloud; status is read from your local gateway. Use your Motionblinds Bridge account.",
+        "data": {"username": "Email", "password": "Password", "host": "Gateway IP address or hostname"}
+      },
+      "reauth_confirm": {
+        "title": "Update Motionblinds login",
+        "description": "Enter the login for the same Bridge account and gateway.",
+        "data": {"username": "Email", "password": "Password", "host": "Gateway IP address or hostname"}
+      }
+    },
+    "error": {
+      "invalid_auth": "The cloud account could not be authenticated.",
+      "cannot_connect": "Could not reach the cloud or match this gateway and its blinds. Check the address, account, and network.",
+      "wrong_account": "Use the same cloud account and gateway as this integration."
+    },
+    "abort": {
+      "already_configured": "This account and gateway are already configured.",
+      "reauth_successful": "Login updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Motionblinds settings",
+        "data": {"host": "Gateway IP address or hostname", "poll_interval": "Local polling interval (seconds)", "battery_method": "Battery percentage calculation"}
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not reach the local gateway.",
+      "wrong_gateway": "This address belongs to a different gateway."
+    }
+  }
+}
